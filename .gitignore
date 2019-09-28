@@ -1,0 +1,18 @@
+# objects
+*.o
+*.obj
+
+# outputs
+*.dll
+*.lib
+*.a
+*.so
+
+# additional outputs
+*.exp
+*.pdb
+*.ilk
+
+# caches
+.sconsign.dblite
+__pycache__
