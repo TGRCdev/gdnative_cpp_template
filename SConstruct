@@ -163,4 +163,5 @@ godot_cpp_inc = [
 env.Append(CPPPATH=godot_cpp_inc, LIBPATH=[env['godot_cpp'] + "/bin"], LIBS=["libgodot-cpp.{}.{}.{}".format(host_platform, env['target'], env['bits'])])
 
 format_dict = {"NAME":module_name,"BITS":env['bits'] if env['platform'] != 'android' else env['android_arch'], "TARGET":env['target'], "PLATFORM":env['platform']}
-env.SharedLibrary(gdnative_output.format(**format_dict) + env['SHLIBSUFFIX'], source=source_files)
+library = env.SharedLibrary(gdnative_output.format(**format_dict) + env['SHLIBSUFFIX'], source=source_files)
+env.Install('demo/lib/' + module_name, library)
